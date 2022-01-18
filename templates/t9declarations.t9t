@@ -1,0 +1,104 @@
+﻿//ВНИМАНИЕ! Этот файл будет перезаписан при следующем обновлении программы!
+//Сохраните файл под другим именем после внесения изменений
+
+// Команды:
+// <!> установить позицию курсора после вставки текста шаблона
+// <?> установить позицию курсора после вставки текста шаблона и нажать Ctrl+Space
+// <ENTER> нажать ENTER после вставки, но до установки позиции курсора
+
+//Context:
+//	0 - любой (шаблон будет показан везде)
+//	1 - глобальный (шаблон будет показан в глобальном контексте)
+//	2 - класса (будет показан только после .)
+//	3 - объявление типа (будет показан только при объявлении типа)
+
+//Priority:
+//Шаблоны с более высоким приоритетом показываются в списке меню выше. Чем больше число, тем выше приоритет. По умолчанию 0.
+//Шаблоны с приоритетом 0 не показываются в списке, пока в поиске не набран хотя бы один символ
+//Ключевые слова и Встроенные функции языка имеют приоритет 10
+
+//Шаблон для объявления типов
+[
+{
+  "FromContext": false,
+  "Priority": 20,
+  "CustomFilter": "",
+  "Context": 0,
+  "Type": null,
+  "ValueForFilter": "<Объявить тип переменной>",
+  "DisplayedValue": "<Объявить тип переменной>",
+  "Value": "@declare_type",
+  "IsServiceTemplate": true,
+  "IsMethod": false,
+  "ChildItems": [
+    {
+      "FromContext": false,
+      "Priority": 1,
+      "CustomFilter": "",
+      "Context": 3,
+      "Type": null,
+      "ChildItems": null,
+      "ValueForFilter": "КоллекцияИлиВстроенныйТип",
+      "DisplayedValue": "Коллекция или встроенный тип",
+      "Value": "КоллекцияИлиВстроенныйТип",
+      "IsMethod": false,
+      "IsServiceTemplate": true,
+      "Template": {
+        "Name": "КоллекцияИлиВстроенныйТип",
+        "Text": "Если Ложь Тогда <$0> = Новый <?>; КонецЕсли;"
+      }
+    },
+    {
+      "FromContext": false,
+      "Priority": 1,
+      "CustomFilter": "",
+      "Context": 3,
+      "Type": null,
+      "ChildItems": null,
+      "ValueForFilter": "Справочник",
+      "DisplayedValue": "Справочник",
+      "Value": "Справочник",
+      "IsMethod": false,
+      "IsServiceTemplate": true,
+      "Template": {
+        "Name": "Справочник",
+        "Text": "Если Ложь Тогда <$0> = Справочники.<?>.СоздатьЭлемент(); КонецЕсли;"
+      }
+    },
+    {
+      "FromContext": false,
+      "Priority": 1,
+      "CustomFilter": "",
+      "Context": 3,
+      "Type": null,
+      "ChildItems": null,
+      "ValueForFilter": "Документ",
+      "DisplayedValue": "Документ",
+      "Value": "Документ",
+      "IsMethod": false,
+      "IsServiceTemplate": true,
+      "Template": {
+        "Name": "Документ",
+        "Text": "Если Ложь Тогда <$0> = Документы.<?>.СоздатьДокумент() КонецЕсли;"
+      }
+    },
+    {
+      "FromContext": false,
+      "Priority": 1,
+      "CustomFilter": "",
+      "Context": 3,
+      "Type": null,
+      "ChildItems": null,
+      "ValueForFilter": "Произвольный",
+      "DisplayedValue": "Произвольный",
+      "Value": "Произвольный",
+      "IsMethod": false,
+      "IsServiceTemplate": true,
+      "Template": {
+        "Name": "Произвольный",
+        "Text": "Если Ложь Тогда <$0> = <!>; КонецЕсли;"
+      }
+    }
+  ]
+}
+]

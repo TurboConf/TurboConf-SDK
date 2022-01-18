@@ -1,0 +1,810 @@
+﻿//ВНИМАНИЕ! Этот файл будет перезаписан при следующем обновлении программы!
+//Сохраните файл под другим именем после внесения изменений
+
+// Команды:
+// <!> установить позицию курсора после вставки текста шаблона
+// <?> установить позицию курсора после вставки текста шаблона и нажать Ctrl+Space
+// <ENTER> нажать ENTER после вставки, но до установки позиции курсора
+
+//Context:
+//	0 - любой (шаблон будет показан везде)
+//	1 - глобальный (шаблон будет показан в глобальном контексте)
+//	2 - класса (будет показан только после .)
+//	3 - объявление типа (будет показан только при объявлении типа)
+//	4 - запроса (будет показан только в текстах запросов)
+
+//Priority:
+//Шаблоны с более высоким приоритетом показываются в списке меню выше. Чем больше число, тем выше приоритет. По умолчанию 0.
+//Шаблоны с приоритетом 0 не показываются в списке, пока в поиске не набран хотя бы один символ
+//Встроенные функции языка имеют приоритет 10
+
+//Функции языка запросов
+[  
+{
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Выбрать",
+    "DisplayedValue": "ВЫБРАТЬ",
+    "Value": "ВЫБРАТЬ",
+    "Template": {
+      "Name": "ВЫБРАТЬ",
+      "Text": "ВЫБРАТЬ"
+    },    
+    "AllowFields": true
+  },  
+{
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ВыбратьПервые",
+    "DisplayedValue": "ВЫБРАТЬ ПЕРВЫЕ",
+    "Value": "ВЫБРАТЬ ПЕРВЫЕ",
+    "Template": {
+      "Name": "ВЫБРАТЬ",
+      "Text": "ВЫБРАТЬ ПЕРВЫЕ "
+    },    
+    "AllowFields": true
+  },
+ {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ВыбратьРазличные",
+    "DisplayedValue": "ВЫБРАТЬ РАЗЛИЧНЫЕ",
+    "Value": "ВЫБРАТЬ РАЗЛИЧНЫЕ",
+    "Template": {
+      "Name": "ВЫБРАТЬ РАЗЛИЧНЫЕ",
+      "Text": "ВЫБРАТЬ РАЗЛИЧНЫЕ"
+    },    
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ВыбратьРазрешенные",
+    "DisplayedValue": "ВЫБРАТЬ РАЗРЕШЕННЫЕ",
+    "Value": "ВЫБРАТЬ РАЗРЕШЕННЫЕ",
+    "Template": {
+      "Name": "ВЫБРАТЬ РАЗРЕШЕННЫЕ",
+      "Text": "ВЫБРАТЬ РАЗРЕШЕННЫЕ"
+    },    
+    "AllowFields": true
+  },  
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Первые",
+    "DisplayedValue": "ПЕРВЫЕ",
+    "Value": "ПЕРВЫЕ",
+    "Template": {
+      "Name": "ПЕРВЫЕ",
+      "Text": "ПЕРВЫЕ "
+    },    
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Разрешенные",
+    "DisplayedValue": "РАЗРЕШЕННЫЕ",
+    "Value": "РАЗРЕШЕННЫЕ",
+    "Template": {
+      "Name": "РАЗРЕШЕННЫЕ",
+      "Text": "РАЗРЕШЕННЫЕ"
+    },    
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Различные",
+    "DisplayedValue": "РАЗЛИЧНЫЕ",
+    "Value": "РАЗЛИЧНЫЕ",
+    "Template": {
+      "Name": "РАЗЛИЧНЫЕ",
+      "Text": "РАЗЛИЧНЫЕ"
+    },    
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Истина",
+    "DisplayedValue": "ИСТИНА",
+    "Value": "ИСТИНА",
+    "Template": {
+      "Name": "ИСТИНА",
+      "Text": "ИСТИНА"
+    },    
+    "AllowFields": true
+  }, 
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Ложь",
+    "DisplayedValue": "ЛОЖЬ",
+    "Value": "ЛОЖЬ",
+    "Template": {
+      "Name": "ЛОЖЬ",
+      "Text": "ЛОЖЬ"
+    },    
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Как",
+    "DisplayedValue": "КАК",
+    "Value": "КАК",
+    "Template": {
+      "Name": "КАК",
+      "Text": "КАК"
+    },    
+    "AllowFields": true
+  },  
+  //Функции работы со строками
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Подстрока",
+    "DisplayedValue": "ПОДСТРОКА(<Строка>, <НачальнаяПозиция>, <Длина>)",
+    "Value": "ПОДСТРОКА",
+    "Template": {
+      "Name": "ПОДСТРОКА",
+      "Text": "ПОДСТРОКА(<!>, ,)"
+    },
+    "AllowFields": true
+  },
+  //Функции работы с датами
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Год",
+    "DisplayedValue": "ГОД",
+    "Value": "ГОД",
+    "Template": {
+      "Name": "ГОД",
+      "Text": "ГОД(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Квартал",
+    "DisplayedValue": "КВАРТАЛ",
+    "Value": "КВАРТАЛ",
+    "Template": {
+      "Name": "КВАРТАЛ",
+      "Text": "КВАРТАЛ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Месяц",
+    "DisplayedValue": "МЕСЯЦ",
+    "Value": "МЕСЯЦ",
+    "Template": {
+      "Name": "МЕСЯЦ",
+      "Text": "МЕСЯЦ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ДеньГода",
+    "DisplayedValue": "ДЕНЬГОДА",
+    "Value": "ДЕНЬГОДА",
+    "Template": {
+      "Name": "ДЕНЬГОДА",
+      "Text": "ДЕНЬГОДА(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "День",
+    "DisplayedValue": "ДЕНЬ",
+    "Value": "ДЕНЬ",
+    "Template": {
+      "Name": "ДЕНЬ",
+      "Text": "ДЕНЬ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Неделя",
+    "DisplayedValue": "НЕДЕЛЯ",
+    "Value": "НЕДЕЛЯ",
+    "Template": {
+      "Name": "НЕДЕЛЯ",
+      "Text": "НЕДЕЛЯ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ДеньНедели",
+    "DisplayedValue": "ДЕНЬНЕДЕЛИ",
+    "Value": "ДЕНЬНЕДЕЛИ",
+    "Template": {
+      "Name": "ДЕНЬНЕДЕЛИ",
+      "Text": "ДЕНЬНЕДЕЛИ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Час",
+    "DisplayedValue": "ЧАС",
+    "Value": "ЧАС",
+    "Template": {
+      "Name": "ЧАС",
+      "Text": "ЧАС(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Минута",
+    "DisplayedValue": "МИНУТА",
+    "Value": "МИНУТА",
+    "Template": {
+      "Name": "МИНУТА",
+      "Text": "МИНУТА(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Секунда",
+    "DisplayedValue": "СЕКУНДА",
+    "Value": "СЕКУНДА",
+    "Template": {
+      "Name": "СЕКУНДА",
+      "Text": "СЕКУНДА(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "НачалоПериода",
+    "DisplayedValue": "НАЧАЛОПЕРИОДА(<Дата>, <ТипПериода>)",
+    "Value": "НАЧАЛОПЕРИОДА",
+    "Template": {
+      "Name": "НАЧАЛОПЕРИОДА",
+      "Text": "НАЧАЛОПЕРИОДА(<!>, )"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "КонецПериода",
+    "DisplayedValue": "КОНЕЦПЕРИОДА(<Дата>, <ТипПериода>)",
+    "Value": "КОНЕЦПЕРИОДА",
+    "Template": {
+      "Name": "КОНЕЦПЕРИОДА",
+      "Text": "КОНЕЦПЕРИОДА(<!>, )"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ДобавитьКДате",
+    "DisplayedValue": "ДОБАВИТЬКДАТЕ(<Дата>, <ТипПериода>, <Количество>)",
+    "Value": "ДОБАВИТЬКДАТЕ",
+    "Template": {
+      "Name": "ДОБАВИТЬКДАТЕ",
+      "Text": "ДОБАВИТЬКДАТЕ(<!>, , )"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "РазностьДат",
+    "DisplayedValue": "РАЗНОСТЬДАТ(<Вычитаемая дата>, <Уменьшаемая дата>, <Тип>)",
+    "Value": "РАЗНОСТЬДАТ",
+    "Template": {
+      "Name": "РАЗНОСТЬДАТ",
+      "Text": "РАЗНОСТЬДАТ(<!>, , )"
+    },
+    "AllowFields": true
+  },
+  
+  //Агрегатные функции
+   {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Сумма",
+    "DisplayedValue": "СУММА",
+    "Value": "СУММА",
+    "Template": {
+      "Name": "СУММА",
+      "Text": "СУММА(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Минимум",
+    "DisplayedValue": "МИНИМУМ",
+    "Value": "МИНИМУМ",
+    "Template": {
+      "Name": "МИНИМУМ",
+      "Text": "МИНИМУМ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Максимум",
+    "DisplayedValue": "МАКСИМУМ",
+    "Value": "МАКСИМУМ",
+    "Template": {
+      "Name": "МАКСИМУМ",
+      "Text": "МАКСИМУМ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Среднее",
+    "DisplayedValue": "СРЕДНЕЕ",
+    "Value": "СРЕДНЕЕ",
+    "Template": {
+      "Name": "СРЕДНЕЕ",
+      "Text": "СРЕДНЕЕ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Количество",
+    "DisplayedValue": "КОЛИЧЕСТВО",
+    "Value": "КОЛИЧЕСТВО",
+    "Template": {
+      "Name": "КОЛИЧЕСТВО",
+      "Text": "КОЛИЧЕСТВО(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Количество(РАЗЛИЧНЫЕ)",
+    "DisplayedValue": "КОЛИЧЕСТВО(РАЗЛИЧНЫЕ)",
+    "Value": "КОЛИЧЕСТВО",
+    "Template": {
+      "Name": "КОЛИЧЕСТВО",
+      "Text": "КОЛИЧЕСТВО(РАЗЛИЧНЫЕ <!>)"
+    },
+    "AllowFields": true
+  },
+  
+ //Прочие функции
+   {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Есть Null",
+    "DisplayedValue": "Есть NULL",
+    "Value": "ЕСТЬ NULL",
+    "Template": {
+      "Name": "ЕСТЬ NULL",
+      "Text": "ЕСТЬ NULL <!>"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Представление",
+    "DisplayedValue": "ПРЕДСТАВЛЕНИЕ",
+    "Value": "ПРЕДСТАВЛЕНИЕ",
+    "Template": {
+      "Name": "ПРЕДСТАВЛЕНИЕ",
+      "Text": "ПРЕДСТАВЛЕНИЕ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ПредставлениеСсылки",
+    "DisplayedValue": "ПРЕДСТАВЛЕНИЕССЫЛКИ",
+    "Value": "ПРЕДСТАВЛЕНИЕССЫЛКИ",
+    "Template": {
+      "Name": "ПРЕДСТАВЛЕНИЕССЫЛКИ",
+      "Text": "ПРЕДСТАВЛЕНИЕССЫЛКИ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ТипЗначения",
+    "DisplayedValue": "ТИПЗНАЧЕНИЯ",
+    "Value": "ТИПЗНАЧЕНИЯ",
+    "Template": {
+      "Name": "ТИПЗНАЧЕНИЯ",
+      "Text": "ТИПЗНАЧЕНИЯ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "АвтономерЗаписи",
+    "DisplayedValue": "АВТОНОМЕРЗАПИСИ",
+    "Value": "АВТОНОМЕРЗАПИСИ",
+    "Template": {
+      "Name": "АВТОНОМЕРЗАПИСИ",
+      "Text": "АВТОНОМЕРЗАПИСИ()\n<!>"
+    },
+    "AllowFields": true
+  },
+
+  
+  
+  
+  //Логические Операторы
+    {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Подобно",
+    "DisplayedValue": "ПОДОБНО",
+    "Value": "ПОДОБНО",
+    "Template": {
+      "Name": "ПОДОБНО",
+      "Text": "ПОДОБНО \"<!>\""
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ВИерархии",
+    "DisplayedValue": "В ИЕРАРХИИ",
+    "Value": "В ИЕРАРХИИ",
+    "Template": {
+      "Name": "В ИЕРАРХИИ",
+      "Text": "В ИЕРАРХИИ <!>"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Между",
+    "DisplayedValue": "МЕЖДУ",
+    "Value": "МЕЖДУ",
+    "Template": {
+      "Name": "МЕЖДУ",
+      "Text": "МЕЖДУ <!> И"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ЕстьNull",
+    "DisplayedValue": "ЕСТЬNULL(<Выражение>, <Выражение>)",
+    "Value": "ЕСТЬNULL",
+    "Template": {
+      "Name": "ЕСТЬNULL",
+      "Text": "ЕСТЬNULL(<!>, )"
+    },
+    "AllowFields": true
+  },
+
+  
+  //Прочие операторы
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Выбор",
+    "DisplayedValue": "ВЫБОР",
+    "Value": "ВЫБОР",
+    "Template": {
+      "Name": "ВЫБОР",
+      "Text": "ВЫБОР\r\n|\tКОГДА <!> ТОГДА\r\n|\tИНАЧЕ\r\n|КОНЕЦ"
+    },
+    "AllowFields": true,
+    "SmartFilter": "\\|",
+  },    
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Выбор",
+    "DisplayedValue": "ВЫБОР",
+    "Value": "ВЫБОР",
+    "Template": {
+      "Name": "ВЫБОР",
+      "Text": "ВЫБОР\r\nКОГДА <!> ТОГДА\r\nИНАЧЕ\r\nКОНЕЦ\r\n"
+    },
+    "AllowFields": true
+  }, 
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Выразить",
+    "DisplayedValue": "ВЫРАЗИТЬ(<Выражение> КАК <Тип>)",
+    "Value": "ВЫРАЗИТЬ",
+    "Template": {
+      "Name": "ВЫРАЗИТЬ",
+      "Text": "ВЫРАЗИТЬ (<!> КАК )"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Когда",
+    "DisplayedValue": "КОГДА",
+    "Value": "КОГДА",
+    "Template": {
+      "Name": "КОГДА",
+      "Text": "КОГДА <!> ТОГДА"
+    },
+    "AllowFields": true,
+    "SmartFilter": "\\bВЫБОР\\b(?!.*\\bКОНЕЦ\\b)",
+  },
+  //Прочее
+   {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ДатаВремя",
+    "DisplayedValue": "ДАТАВРЕМЯ(<Год>,<Месяц>,<День>,<Час>,<Минута>,<Секунда>)",
+    "Value": "ДАТАВРЕМЯ",
+    "Template": {
+      "Name": "ДАТАВРЕМЯ",
+      "Text": "ДАТАВРЕМЯ(<!>, , , , , )"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Значение",
+    "DisplayedValue": "ЗНАЧЕНИЕ(<Имя>)",
+    "Value": "ЗНАЧЕНИЕ",
+    "Template": {
+      "Name": "ЗНАЧЕНИЕ",
+      "Text": "ЗНАЧЕНИЕ(<!>)"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Тип",
+    "DisplayedValue": "ТИП",
+    "Value": "ТИП",
+    "Template": {
+      "Name": "ТИП",
+      "Text": "ТИП(<!>)"
+    },
+    "AllowFields": true
+  },
+ //Ключевые слова запроса
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ЛевоеСоединение",
+    "DisplayedValue": "ЛЕВОЕ СОЕДИНЕНИЕ",
+    "Value": "ЛЕВОЕ СОЕДИНЕНИЕ",
+    "Template": {
+      "Name": "ЛЕВОЕ СОЕДИНЕНИЕ",
+      "Text": "ЛЕВОЕ СОЕДИНЕНИЕ <!> КАК  ПО "
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ПравоеСоединение",
+    "DisplayedValue": "ПРАВОЕ СОЕДИНЕНИЕ",
+    "Value": "ПРАВОЕ СОЕДИНЕНИЕ",
+    "Template": {
+      "Name": "ПРАВОЕ СОЕДИНЕНИЕ",
+      "Text": "ПРАВОЕ СОЕДИНЕНИЕ <!> КАК  ПО "
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ПолноеСоединение",
+    "DisplayedValue": "ПОЛНОЕ СОЕДИНЕНИЕ",
+    "Value": "ПОЛНОЕ СОЕДИНЕНИЕ",
+    "Template": {
+      "Name": "ПОЛНОЕ СОЕДИНЕНИЕ",
+      "Text": "ПОЛНОЕ СОЕДИНЕНИЕ <!> КАК  ПО "
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ВнутреннееСоединение",
+    "DisplayedValue": "ВНУТРЕННЕЕ СОЕДИНЕНИЕ",
+    "Value": "ВНУТРЕННЕЕ СОЕДИНЕНИЕ",
+    "Template": {
+      "Name": "ВНУТРЕННЕЕ СОЕДИНЕНИЕ",
+      "Text": "ВНУТРЕННЕЕ СОЕДИНЕНИЕ <!> КАК  ПО "
+    },
+    "AllowFields": true
+  },
+ {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "СгруппироватьПо",
+    "DisplayedValue": "СГРУППИРОВАТЬ ПО",
+    "Value": "СГРУППИРОВАТЬ ПО",
+    "Template": {
+      "Name": "СГРУППИРОВАТЬ ПО",
+      "Text": "СГРУППИРОВАТЬ ПО "
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Имеющие",
+    "DisplayedValue": "ИМЕЮЩИЕ",
+    "Value": "ИМЕЮЩИЕ",
+    "Template": {
+      "Name": "ИМЕЮЩИЕ",
+      "Text": "ИМЕЮЩИЕ"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Объединить",
+    "DisplayedValue": "ОБЪЕДИНИТЬ",
+    "Value": "ОБЪЕДИНИТЬ",
+    "Template": {
+      "Name": "ОБЪЕДИНИТЬ",
+      "Text": "ОБЪЕДИНИТЬ"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ОбъединитьВсе",
+    "DisplayedValue": "ОБЪЕДИНИТЬ ВСЕ",
+    "Value": "ОБЪЕДИНИТЬ ВСЕ",
+    "Template": {
+      "Name": "ОБЪЕДИНИТЬ ВСЕ",
+      "Text": "ОБЪЕДИНИТЬ ВСЕ"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "УпорядочитьПо",
+    "DisplayedValue": "УПОРЯДОЧИТЬ ПО",
+    "Value": "УПОРЯДОЧИТЬ ПО",
+    "Template": {
+      "Name": "УПОРЯДОЧИТЬ ПО",
+      "Text": "УПОРЯДОЧИТЬ ПО"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Возр",
+    "DisplayedValue": "ВОЗР",
+    "Value": "ВОЗР",
+    "Template": {
+      "Name": "ВОЗР",
+      "Text": "ВОЗР"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Убыв",
+    "DisplayedValue": "УБЫВ",
+    "Value": "УБЫВ",
+    "Template": {
+      "Name": "УБЫВ",
+      "Text": "УБЫВ"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Итоги",
+    "DisplayedValue": "ИТОГИ",
+    "Value": "ИТОГИ",
+    "Template": {
+      "Name": "ИТОГИ",
+      "Text": "ИТОГИ"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Где",
+    "DisplayedValue": "ГДЕ",
+    "Value": "ГДЕ",
+    "Template": {
+      "Name": "ГДЕ",
+      "Text": "ГДЕ"
+    },
+    "AllowFields": true
+  },  
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Автоупорядочивание",
+    "DisplayedValue": "АВТОУПОРЯДОЧИВАНИЕ",
+    "Value": "АВТОУПОРЯДОЧИВАНИЕ",
+    "Template": {
+      "Name": "АВТОУПОРЯДОЧИВАНИЕ",
+      "Text": "АВТОУПОРЯДОЧИВАНИЕ"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "Поместить",
+    "DisplayedValue": "ПОМЕСТИТЬ",
+    "Value": "ПОМЕСТИТЬ",
+    "Template": {
+      "Name": "ПОМЕСТИТЬ",
+      "Text": "ПОМЕСТИТЬ"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ИндексироватьПо",
+    "DisplayedValue": "ИНДЕКСИРОВАТЬ ПО",
+    "Value": "ИНДЕКСИРОВАТЬ ПО",
+    "Template": {
+      "Name": "ИНДЕКСИРОВАТЬ ПО",
+      "Text": "ИНДЕКСИРОВАТЬ ПО"
+    },
+    "AllowFields": true
+  },
+  {
+    "Priority": 30,
+    "Context": 4,
+    "ValueForFilter": "ДляИзменения",
+    "DisplayedValue": "ДЛЯ ИЗМЕНЕНИЯ",
+    "Value": "ДЛЯ ИЗМЕНЕНИЯ",
+    "Template": {
+      "Name": "ДЛЯ ИЗМЕНЕНИЯ",
+      "Text": "ДЛЯ ИЗМЕНЕНИЯ"
+    },
+    "AllowFields": true
+  }
+  
+]

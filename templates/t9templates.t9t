@@ -1,0 +1,311 @@
+﻿//ВНИМАНИЕ! Этот файл будет перезаписан при следующем обновлении программы!
+//Сохраните файл под другим именем после внесения изменений
+
+// Команды:
+// <!> установить позицию курсора после вставки текста шаблона
+// <?> установить позицию курсора после вставки текста шаблона и нажать Ctrl+Space
+// <ENTER> нажать ENTER после вставки, но до установки позиции курсора
+
+//Context:
+//	0 - любой (шаблон будет показан везде)
+//	1 - глобальный (шаблон будет показан в глобальном контексте)
+//	2 - класса (будет показан только после .)
+
+//Priority:
+//Шаблоны с более высоким приоритетом показываются в списке меню выше. Чем больше число, тем выше приоритет. По умолчанию 0.
+//Шаблоны с приоритетом 0 не показываются в списке, пока в поиске не набран хотя бы один символ
+//Ключевые слова и Встроенные функции языка имеют приоритет 10
+
+[
+  //Если (меню)
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+
+    "Type": null,
+    //"Template": {
+    //  "Name": "Если_КонецЕсли",
+    //  "Text": "Если <!> Тогда\r\nКонецЕсли;"
+    //},
+    //Также назначаем шаблон штатной подсказке. По TAB на пункте Если.
+    "ContextMenu": "Если",
+    "ChildItems": [
+      {
+        "FromContext": false,
+        "Priority": 3,
+        "CustomFilter": "",
+        "Context": 1,
+   
+        "Type": null,
+        "Template": {
+          "Name": "Если_КонецЕсли",
+          "Text": "Если <!> Тогда\r\nКонецЕсли;"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "Если_КонецЕсли",
+        "DisplayedValue": "Если_КонецЕсли",
+        "Value": "Если_КонецЕсли",
+        "IsMethod": false,
+        Cached: true,
+        SmartFilter: "\\b(?<!#)[\\w]+$",
+        EmptyLineOnly: true
+      },
+      {
+        "FromContext": false,
+        "Priority": 2,
+        "CustomFilter": "",
+        "Context": 2,
+   
+        "Type": null,
+        "Template": {
+          "Name": "Если_Иначе_КонецЕсли",
+          "Text": "Если <!> Тогда\r\nИначе\r\nКонецЕсли;"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "Если_Иначе_КонецЕсли",
+        "DisplayedValue": "Если_Иначе_КонецЕсли",
+        "Value": "Если_Иначе_КонецЕсли",
+        "IsMethod": false,
+        SmartFilter: "\\b(?<!#)[\\w]+$",
+        EmptyLineOnly: true
+      },
+      {
+        "FromContext": false,
+        "Priority": 1,
+        "CustomFilter": "",
+        "Context": 1,
+   
+        "Type": null,
+        "Template": {
+          "Name": "#Если_КонецЕсли",
+          "Text": "#Если <!> Тогда\r\n#КонецЕсли"
+        },
+        "ContextMenu": "#Если",
+        "ChildItems": null,
+        "ValueForFilter": "#Если_КонецЕсли",
+        "DisplayedValue": "#Если_КонецЕсли",
+        "Value": "#Если_КонецЕсли",
+        "IsMethod": false,
+        Cached: true,
+        SmartFilter: "(?<=\\#)[\\w]*$",
+        EmptyLineOnly: true
+      }
+    ],
+    //Заменяем вставку слова Если на вставку шаблона. По TAB будет вставляться шаблон, иначе просто слово Если.
+    "ValueForFilter": "Если",
+    "DisplayedValue": "Если",
+    "Value": "Если",
+    "IsMethod": false
+  },
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Если_КонецЕсли",
+      "Text": "Если <!> Тогда\r\nКонецЕсли;"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Если_КонецЕсли",
+    "DisplayedValue": "Если_КонецЕсли",
+    "Value": "Если_КонецЕсли",
+    "IsMethod": false,
+    EmptyLineOnly: true
+  },
+  {
+    "FromContext": false,
+    "Priority": 29,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Если_Иначе_КонецЕсли",
+      "Text": "Если <!> Тогда\r\nИначе\r\nКонецЕсли;"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Если_Иначе_КонецЕсли",
+    "DisplayedValue": "Если_Иначе_КонецЕсли",
+    "Value": "Если_Иначе_КонецЕсли",
+    "IsMethod": false,
+    EmptyLineOnly: true
+  },  
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Попытка_Исключение",
+      "Text": "Попытка\r\n<!>\r\nИсключение\r\nКонецПопытки;"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Попытка_Исключение",
+    "DisplayedValue": "Попытка_Исключение",
+    "Value": "Попытка_Исключение",
+    "IsMethod": false,
+    EmptyLineOnly: true
+  },
+{
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Попытка",
+      "Text": "Попытка\r\n<!>\r\nИсключение\r\nКонецПопытки;"
+    },
+    "ContextMenu": "Попытка",
+    "ChildItems": null,
+    "ValueForFilter": "Попытка",
+    "DisplayedValue": "Попытка",
+    "Value": "Попытка",
+    "IsMethod": false,
+    EmptyLineOnly: true,
+  },  
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Пока_Цикл",
+      "Text": "Пока <!> Цикл\r\nКонецЦикла;"
+    },
+    "ContextMenu": "Пока",
+    "ChildItems": null,
+    "ValueForFilter": "Пока_Цикл",
+    "DisplayedValue": "Пока_Цикл",
+    "Value": "Пока_Цикл",
+    "IsMethod": false,
+    Cached: true,
+    EmptyLineOnly: true
+  },
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Для_По_Цикл",
+      "Text": "Для <!> По  Цикл\r\nКонецЦикла;"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Для_По_Цикл",
+    "DisplayedValue": "Для_По_Цикл",
+    "Value": "Для_По_Цикл",
+    "IsMethod": false,
+    Cached: true,
+    EmptyLineOnly: true
+  },
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Для_Каждого_Цикл",
+      "Text": "Для Каждого <!> Из  Цикл\r\nКонецЦикла;"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Для_Каждого_Цикл",
+    "DisplayedValue": "Для_Каждого_Цикл",
+    "Value": "Для_Каждого_Цикл",
+    "IsMethod": false,
+    Cached: true,
+    EmptyLineOnly: true
+  },
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "ИначеЕсли_Тогда",
+      "Text": "ИначеЕсли <!> Тогда<ENTER>"
+    },
+    "ChildItems": null,
+    "ContextMenu": "ИначеЕсли",
+    "ValueForFilter": "ИначеЕсли_Тогда",
+    "DisplayedValue": "ИначеЕсли_Тогда",
+    "Value": "ИначеЕсли_Тогда",
+    "IsMethod": false,
+    Cached: true,
+    EmptyLineOnly: true
+  }, 
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Область_КонецОбласти",
+      "Text": "#Область <!>\r\n#КонецОбласти"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "#Область_КонецОбласти",
+    "DisplayedValue": "#Область_КонецОбласти",
+    "Value": "#Область_КонецОбласти",
+    "IsMethod": false,
+    Cached: true,
+    EmptyLineOnly: true
+  },  
+  //Для (меню)
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": null,
+    "ChildItems": [
+      {
+        "FromContext": false,
+        "Priority": 1,        
+        "CustomFilter": "",
+        "Context": 1,   
+        "Type": null,
+        "Template": {
+          "Name": "Для_По_Цикл",
+          "Text": "Для <!> По  Цикл\r\nКонецЦикла;"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "Для_По_Цикл",
+        "DisplayedValue": "Для_По_Цикл",
+        "Value": "Для_По_Цикл",
+        "IsMethod": false,
+      },
+      {
+        "FromContext": false,
+        "Priority": 1,        
+        "CustomFilter": "",
+        "Context": 1,   
+        "Type": null,
+        "Template": {
+          "Name": "Для_Каждого_Цикл",
+          "Text": "Для Каждого <!> Из  Цикл\r\nКонецЦикла;"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "Для_Каждого_Цикл",
+        "DisplayedValue": "Для_Каждого_Цикл",
+        "Value": "Для_Каждого_Цикл",
+        "IsMethod": false
+      }
+    ],
+    "ContextMenu": "Для",
+    "ValueForFilter": "Для",
+    "DisplayedValue": "Для",
+    "Value": "Для_Цикл",
+    "IsMethod": false
+  }
+]

@@ -1,0 +1,269 @@
+﻿//ВНИМАНИЕ! Этот файл будет перезаписан при следующем обновлении программы!
+//Сохраните файл под другим именем после внесения изменений
+
+// Команды:
+// <!> установить позицию курсора после вставки текста шаблона
+// <?> установить позицию курсора после вставки текста шаблона и нажать Ctrl+Space
+// <ENTER> нажать ENTER после вставки, но до установки позиции курсора
+
+//Context:
+//	0 - любой (шаблон будет показан везде)
+//	1 - глобальный (шаблон будет показан в глобальном контексте)
+//	2 - класса (будет показан только после .)
+
+//Priority:
+//Шаблоны с более высоким приоритетом показываются в списке меню выше. Чем больше число, тем выше приоритет. По умолчанию 0.
+//Шаблоны с приоритетом 0 не показываются в списке, пока в поиске не набран хотя бы один символ
+//Встроенные функции языка имеют приоритет 10
+
+//Директивы и инструкции препроцессора
+[
+{
+    "FromContext": false,
+    "Priority": 25,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "#КонецЕсли",
+      "Text": "#КонецЕсли<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "#КонецЕсли",
+    "DisplayedValue": "#КонецЕсли",
+    "Value": "#КонецЕсли",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "\\#Если.*\\b(Тогда|Иначе)\\b(?!.*#КонецЕсли\\b)"
+  },
+  {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Сервер",
+      "Text": "Сервер"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Сервер",
+    "DisplayedValue": "Сервер",
+    "Value": "Сервер",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "#(Если|ИначеЕсли)\\b\\s+[\\w \\t]*$"
+  },
+ {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Клиент",
+      "Text": "Клиент"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Клиент",
+    "DisplayedValue": "Клиент",
+    "Value": "Клиент",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "#(Если|ИначеЕсли)\\b\\s+[\\w \\t]*$"
+  },
+{
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "МобильноеПриложениеКлиент",
+      "Text": "МобильноеПриложениеКлиент"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "МобильноеПриложениеКлиент",
+    "DisplayedValue": "МобильноеПриложениеКлиент",
+    "Value": "МобильноеПриложениеКлиент",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "#(Если|ИначеЕсли)\\b\\s+[\\w \\t]*$"
+  },
+  {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "МобильноеПриложениеСервер",
+      "Text": "МобильноеПриложениеСервер"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "МобильноеПриложениеСервер",
+    "DisplayedValue": "МобильноеПриложениеСервер",
+    "Value": "МобильноеПриложениеСервер",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "#(Если|ИначеЕсли)\\b\\s+[\\w \\t]*$"
+  },
+ {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "ТолстыйКлиентОбычноеПриложение",
+      "Text": "ТолстыйКлиентОбычноеПриложение"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "ТолстыйКлиентОбычноеПриложение",
+    "DisplayedValue": "ТолстыйКлиентОбычноеПриложение",
+    "Value": "ТолстыйКлиентОбычноеПриложение",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "#(Если|ИначеЕсли)\\b\\s+[\\w \\t]*$"
+  },
+   {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "ТолстыйКлиентУправляемоеПриложение",
+      "Text": "ТолстыйКлиентУправляемоеПриложение"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "ТолстыйКлиентУправляемоеПриложение",
+    "DisplayedValue": "ТолстыйКлиентУправляемоеПриложение",
+    "Value": "ТолстыйКлиентУправляемоеПриложение",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "#(Если|ИначеЕсли)\\b\\s+[\\w \\t]*$"
+  },
+   {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "ВнешнееСоединение",
+      "Text": "ВнешнееСоединение"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "ВнешнееСоединение",
+    "DisplayedValue": "ВнешнееСоединение",
+    "Value": "ВнешнееСоединение",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "#(Если|ИначеЕсли)\\b\\s+[\\w \\t]*$"
+  },
+   {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "ТонкийКлиент",
+      "Text": "ТонкийКлиент"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "ТонкийКлиент",
+    "DisplayedValue": "ТонкийКлиент",
+    "Value": "ТонкийКлиент",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "#(Если|ИначеЕсли)\\b\\s+[\\w \\t]*$"
+  },
+   {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "ВебКлиент",
+      "Text": "ВебКлиент"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "ВебКлиент",
+    "DisplayedValue": "ВебКлиент",
+    "Value": "ВебКлиент",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "#(Если|ИначеЕсли)\\b\\s+[\\w \\t]*$"
+  },
+  {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "&НаКлиенте",
+      "Text": "&НаКлиенте"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "&НаКлиенте",
+    "DisplayedValue": "&НаКлиенте",
+    "Value": "&НаКлиенте",
+    "IsMethod": false,
+    Cached: true,
+  },
+  {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "&НаСервере",
+      "Text": "&НаСервере"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "&НаСервере",
+    "DisplayedValue": "&НаСервере",
+    "Value": "&НаСервере",
+    "IsMethod": false,
+    Cached: true,
+  },
+  {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "&НаСервереБезКонтекста",
+      "Text": "&НаСервереБезКонтекста"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "&НаСервереБезКонтекста",
+    "DisplayedValue": "&НаСервереБезКонтекста",
+    "Value": "&НаСервереБезКонтекста",
+    "IsMethod": false,
+    Cached: true,
+  },
+  {
+    "FromContext": false,
+    "Priority": 100,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "&НаКлиентеНаСервереБезКонтекста",
+      "Text": "&НаКлиентеНаСервереБезКонтекста"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "&НаКлиентеНаСервереБезКонтекста",
+    "DisplayedValue": "&НаКлиентеНаСервереБезКонтекста",
+    "Value": "&НаКлиентеНаСервереБезКонтекста",
+    "IsMethod": false,
+    Cached: true,
+  }, 
+]

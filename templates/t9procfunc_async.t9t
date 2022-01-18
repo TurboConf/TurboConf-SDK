@@ -1,0 +1,166 @@
+﻿//ВНИМАНИЕ! Этот файл будет перезаписан при следующем обновлении программы!
+//Сохраните файл под другим именем после внесения изменений
+
+// Команды:
+// <!> установить позицию курсора после вставки текста шаблона
+// <?> установить позицию курсора после вставки текста шаблона и нажать Ctrl+Space
+// <ENTER> нажать ENTER после вставки, но до установки позиции курсора
+
+//Context:
+//	0 - любой (шаблон будет показан везде)
+//	1 - глобальный (шаблон будет показан в глобальном контексте)
+//	2 - класса (будет показан только после .)
+
+//Priority:
+//Шаблоны с более высоким приоритетом показываются в списке меню выше. Чем больше число, тем выше приоритет. По умолчанию 0.
+//Шаблоны с приоритетом 0 не показываются в списке, пока в поиске не набран хотя бы один символ
+//Ключевые слова и Встроенные функции языка имеют приоритет 10
+
+[
+  //Асинх (меню)
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    //Заменяем вставку слова Если на вставку шаблона. По TAB будет вставляться шаблон, иначе просто слово Если.
+    "ValueForFilter": "Асинх",
+    "DisplayedValue": "Асинх",
+    "Value": "Асинх",
+    "IsMethod": false,
+    "Type": null,
+    "ChildItems": [ 
+  //Процедура (меню)
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": null,
+    "ChildItems": [
+      {
+        "FromContext": false,
+        "Priority": 1,        
+        "CustomFilter": "",
+        "Context": 1,   
+        "Type": null,
+        "Template": {
+          "Name": "Процедура",
+          "Text": "Асинх Процедура <!>()\r\nКонецПроцедуры"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "Асинх_Процедура",
+        "DisplayedValue": "Процедура (без директив)",
+        "Value": "Асинх Процедура",
+        "IsMethod": false
+      },
+      {
+        "FromContext": false,
+        "Priority": 1,        
+        "CustomFilter": "",
+        "Context": 1,   
+        "Type": null,
+        "Template": {
+          "Name": "ПроцедураНаКлиенте",
+          "Text": "&НаКлиенте\r\nАсинх Процедура <!>()\r\nКонецПроцедуры"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "ПроцедураНаКлиенте",
+        "DisplayedValue": "НаКлиенте",
+        "Value": "НаКлиенте",
+        "IsMethod": false
+      },
+      {
+        "FromContext": false,
+        "Priority": 1,        
+        "CustomFilter": "",
+        "Context": 1,   
+        "Type": null,
+        "Template": {
+          "Name": "ПроцедураНаКлиентеНаСервере",
+          "Text": "&НаКлиентеНаСервере\r\nАсинх Процедура <!>()\r\nКонецПроцедуры"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "НаКлиентеНаСервере",
+        "DisplayedValue": "НаКлиентеНаСервере",
+        "Value": "НаКлиентеНаСервере",
+        "IsMethod": false
+      }
+    ],
+    "ValueForFilter": "Асинх_Процедура_КонецПроцедуры",
+    "DisplayedValue": "Асинх_Процедура_КонецПроцедуры",
+    "Value": "Асинх Процедура",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "^(?!Процедура|Функция).*$",
+    EmptyLineOnly: true
+  },
+  //Функция (меню)
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": null,
+    "ChildItems": [
+      {
+        "FromContext": false,
+        "Priority": 1,        
+        "CustomFilter": "",
+        "Context": 1,   
+        "Type": null,
+        "Template": {
+          "Name": "Функция",
+          "Text": "Асинх Функция <!>()\r\nКонецФункции"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "Функция",
+        "DisplayedValue": "Функция (без директив)",
+        "Value": "Функция",
+        "IsMethod": false
+      },
+      {
+        "FromContext": false,
+        "Priority": 1,        
+        "CustomFilter": "",
+        "Context": 1,   
+        "Type": null,
+        "Template": {
+          "Name": "ФункцияНаКлиенте",
+          "Text": "&НаКлиенте\r\nАсинх Функция <!>()\r\nКонецФункции"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "НаКлиенте",
+        "DisplayedValue": "НаКлиенте",
+        "Value": "НаКлиенте",
+        "IsMethod": false
+      },
+      {
+        "FromContext": false,
+        "Priority": 1,        
+        "CustomFilter": "",
+        "Context": 1,   
+        "Type": null,
+        "Template": {
+          "Name": "ФункцияНаКлиентеНаСервере",
+          "Text": "&НаКлиентеНаСервере\r\nАсинх Функция <!>()\r\nКонецФункции"
+        },
+        "ChildItems": null,
+        "ValueForFilter": "НаКлиентеНаСервере",
+        "DisplayedValue": "НаКлиентеНаСервере",
+        "Value": "НаКлиентеНаСервере",
+        "IsMethod": false
+      }
+    ],
+    "ValueForFilter": "Асинх_Функция_КонецФункции",
+    "DisplayedValue": "Асинх_Функция_КонецФункции",
+    "Value": "Асинх Функция",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "^(?!Процедура|Функция).*$"    
+  }
+  ]
+  }
+]

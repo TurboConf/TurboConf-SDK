@@ -1,0 +1,422 @@
+﻿//ВНИМАНИЕ! Этот файл будет перезаписан при следующем обновлении программы!
+//Сохраните файл под другим именем после внесения изменений
+
+// Команды:
+// <!> установить позицию курсора после вставки текста шаблона
+// <?> установить позицию курсора после вставки текста шаблона и нажать Ctrl+Space
+// <ENTER> нажать ENTER после вставки, но до установки позиции курсора
+
+//Context:
+//	0 - любой (шаблон будет показан везде)
+//	1 - глобальный (шаблон будет показан в глобальном контексте)
+//	2 - класса (будет показан только после .)
+
+//Priority:
+//Шаблоны с более высоким приоритетом показываются в списке меню выше. Чем больше число, тем выше приоритет. По умолчанию 0.
+//Шаблоны с приоритетом 0 не показываются в списке, пока в поиске не набран хотя бы один символ
+//Встроенные функции языка имеют приоритет 10
+
+//Назначаем управляющим операторам более высокий приоритет
+[
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "КонецПроцедуры",
+      "Text": "КонецПроцедуры<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "КонецПроцедуры",
+    "DisplayedValue": "КонецПроцедуры",
+    "Value": "КонецПроцедуры",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "^Процедура\\b(?!.*\\bКонецПроцедуры\\b)",
+    EmptyLineOnly: true
+  },
+{
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "КонецФункции",
+      "Text": "КонецФункции<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "КонецФункции",
+    "DisplayedValue": "КонецФункции",
+    "Value": "КонецФункции",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "^Функция\\b(?!.*\\bКонецФункции\\b)",
+    EmptyLineOnly: true
+  },  
+  {
+    "FromContext": false,
+    "Priority": 70,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "КонецЦикла",
+      "Text": "КонецЦикла;<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "КонецЦикла",
+    "DisplayedValue": "КонецЦикла",
+    "Value": "КонецЦикла",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "\\bЦикл\\b(?!.*\\bКонецЦикла\\b)",
+    EmptyLineOnly: true
+  },
+{
+    "FromContext": false,
+    "Priority": 80,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "КонецЕсли",
+      "Text": "КонецЕсли;<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "КонецЕсли",
+    "DisplayedValue": "КонецЕсли",
+    "Value": "КонецЕсли",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "\\b(Тогда|Иначе)\\b(?!.*\\bКонецЕсли\\b)",
+  },
+  {
+    "FromContext": false,
+    "Priority": 60,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "КонецПопытки",
+      "Text": "КонецПопытки;<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "КонецПопытки",
+    "DisplayedValue": "КонецПопытки",
+    "Value": "КонецПопытки",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "\\b(Попытка|Исключение)\\b(?!.*\\bКонецПопытки\\b)",
+    EmptyLineOnly: true
+  },    
+  {
+    "FromContext": false,
+    "Priority": 90,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Тогда",
+      "Text": "Тогда<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Тогда",
+    "DisplayedValue": "Тогда",
+    "Value": "Тогда",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "\\b(Если|ИначеЕсли)\\b(?!.*\\bТогда\\b)"
+  },
+{
+    "FromContext": false,
+    "Priority": 90,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Иначе",
+      "Text": "Иначе<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Иначе",
+    "DisplayedValue": "Иначе",
+    "Value": "Иначе",
+    "IsMethod": false,
+    Cached: true,
+     SmartFilter: "\\b(Тогда)\\b(?!.*\\b(КонецЕсли|Иначе)\\b)",
+     EmptyLineOnly: true
+  }, 
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Новый",
+    "DisplayedValue": "Новый",
+    "Value": "Новый ",
+    "IsMethod": false
+  },
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Цикл",
+      "Text": "Цикл<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Цикл",
+    "DisplayedValue": "Цикл",
+    "Value": "Цикл",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "\\b(Для|Пока)\\b(?!.*\\bЦикл\\b)"
+  }, 
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "Template": {
+      "Name": "Исключение",
+      "Text": "Исключение<ENTER>"
+    },
+    "ChildItems": null,
+    "ValueForFilter": "Исключение",
+    "DisplayedValue": "Исключение",
+    "Value": "Исключение",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "\\b(Попытка)\\b(?!.*\\b(КонецПопытки|Исключение)\\b)",
+    EmptyLineOnly: true
+  },
+   {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "ВызватьИсключение",
+    "DisplayedValue": "ВызватьИсключение",
+    "Value": "ВызватьИсключение",
+    "IsMethod": false
+  },
+   {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "Template": {
+      "Name": "Прервать",
+      "Text": "Прервать;"
+    },    
+    "ValueForFilter": "Прервать",
+    "DisplayedValue": "Прервать",
+    "Value": "Прервать",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "\\bЦикл\\b(?!.*\\bКонецЦикла\\b)",
+    EmptyLineOnly: true
+  },
+   {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "Template": {
+      "Name": "Продолжить",
+      "Text": "Продолжить;"
+    },       
+    "ValueForFilter": "Продолжить",
+    "DisplayedValue": "Продолжить",
+    "Value": "Продолжить",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "\\bЦикл\\b(?!.*\\bКонецЦикла\\b)",
+    EmptyLineOnly: true
+  },
+   {
+    "FromContext": false,
+    "Priority": 20,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Перейти",
+    "DisplayedValue": "Перейти",
+    "Value": "Перейти",
+    "IsMethod": false
+  },
+ {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "Template": {
+      "Name": "Возврат",
+      "Text": "Возврат <!>;"
+    },       
+    "ContextMenu": "Возврат",
+    "ValueForFilter": "Возврат",
+    "DisplayedValue": "Возврат",
+    "Value": "Возврат",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "^Функция\\b(?!.*\\bКонецФункции\\b)"
+  },
+{
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "Template": {
+      "Name": "Возврат",
+      "Text": "Возврат;"
+    },
+    "ContextMenu": "Возврат",
+    "ValueForFilter": "Возврат",
+    "DisplayedValue": "Возврат",
+    "Value": "Возврат",
+    "IsMethod": false,
+    Cached: true,
+    SmartFilter: "^Процедура\\b(?!.*\\bКонецПроцедуры\\b)"
+  },   
+  {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Возврат",
+    "DisplayedValue": "Возврат",
+    "Value": "Возврат",
+    "IsMethod": false
+  },  
+   {
+    "FromContext": false,
+    "Priority": 10000,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Экспорт",
+    "DisplayedValue": "Экспорт",
+    "Value": "Экспорт",
+    "IsMethod": false,
+    Cached: true,
+    AutoSemicolonDisabled: true,
+    SmartFilter: "^(?:процедура|функция|procedure|function)[\\s]+[\\w\\d_]+[\\s]*\\([^\\)]*\\)[\\t ]*[\\w]*$"
+  }, 
+   {
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Перем",
+    "DisplayedValue": "Перем",
+    "Value": "Перем",
+    "IsMethod": false,
+    "Cached": true,
+    EmptyLineOnly: true
+  },
+ {
+    "FromContext": false,
+    "Priority": 31,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Истина",
+    "DisplayedValue": "Истина",
+    "Value": "Истина",
+    "IsMethod": false,
+    Cached: true,
+    AllowFields: true
+  },  
+ {
+    "FromContext": false,
+    "Priority": 31,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Ложь",
+    "DisplayedValue": "Ложь",
+    "Value": "Ложь",
+    "IsMethod": false,
+    Cached: true,
+    AllowFields: true
+  },  
+ {
+    "FromContext": false,
+    "Priority": 31,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Неопределено",
+    "DisplayedValue": "Неопределено",
+    "Value": "Неопределено",
+    "IsMethod": false,
+    Cached: true,
+    AllowFields: true
+  }, 
+{
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Null",
+    "DisplayedValue": "Null",
+    "Value": "Null",
+    "IsMethod": false,
+    AllowFields: true
+  }, 
+{
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Выполнить",
+    "DisplayedValue": "Выполнить",
+    "Value": "Выполнить",
+    "IsMethod": true
+  }, 
+{
+    "FromContext": false,
+    "Priority": 30,
+    "CustomFilter": "",
+    "Context": 1,
+    "Type": null,
+    "ChildItems": null,
+    "ValueForFilter": "Вычислить",
+    "DisplayedValue": "Вычислить",
+    "Value": "Вычислить",
+    "IsMethod": true,
+    AllowFields: true
+  } 
+]
